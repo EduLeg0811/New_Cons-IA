@@ -53,9 +53,9 @@ const RotatingWord = () => {
   }, []);
 
   return (
-    <span className="inline-flex relative h-[1.15em] overflow-hidden align-bottom">
+    <span className="inline-flex relative left-1 top-[0.1em] w-[13ch] justify-end text-right h-[1.15em] overflow-hidden align-bottom">
       {/* invisible word to reserve width */}
-      <span className="invisible">{rotatingWords.reduce((a, b) => (a.length >= b.length ? a : b))}</span>
+      <span className="invisible w-full text-right">{rotatingWords.reduce((a, b) => (a.length >= b.length ? a : b))}</span>
       {rotatingWords.map((word, i) => (
         <motion.span
           key={word}
@@ -220,7 +220,7 @@ const Landing = () => {
       <motion.section
         ref={heroRef}
         style={{ opacity: heroOpacity, scale: heroScale }}
-        className="relative mx-auto w-full max-w-5xl px-5 pt-24 pb-20 sm:pt-32 sm:pb-28 text-center"
+        className="relative mx-auto w-full max-w-5xl px-5 pt-5 pb-10 sm:pt-8 sm:pb-14 text-center"
       >
         {/* Decorative grid */}
         <div
@@ -231,25 +231,30 @@ const Landing = () => {
           }}
         />
 
-        <motion.div
+       {/*  <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/80 backdrop-blur-sm px-4 py-1.5 text-xs font-medium text-muted-foreground mb-8"
         >
           <Sparkles className="h-3.5 w-3.5 text-primary" />
-          {totalModules} ferramentas de IA disponíveis
-        </motion.div>
+          <span className="font-extrabold text-primary" style={{ fontWeight: 800, color: "hsl(var(--primary))" }}>
+            {totalModules}
+          </span>
+          <span>ferramentas de IA disponíveis</span>
+        </motion.div> */}
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
-          className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.08] mb-6"
+          className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.2] mb-6"
         >
           O que você quer
           <br />
-          <RotatingWord /> ?
+          <span className="relative -left-40 inline-flex items-baseline">
+            <RotatingWord /> <span className="relative left-4 top-2">?</span>
+          </span>
         </motion.h1>
 
         <motion.p
@@ -258,7 +263,9 @@ const Landing = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto leading-relaxed mb-10"
         >
-          Explore ferramentas de IA para estudo e pesquisa da Conscienciologia.
+          <span>Explore </span>
+          <span className="font-extrabold text-primary">{totalModules}</span>
+          <span> ferramentas de IA para estudo e pesquisa da Conscienciologia.</span>
         </motion.p>
 
         {/* Scroll indicator */}
