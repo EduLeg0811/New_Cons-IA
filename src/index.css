@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 93%;
+    --secondary-foreground: 220 25% 10%;
+
+    --muted: 220 15% 93%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 220 15% 93%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 220 70% 50%;
+
+    --radius: 1rem;
+
+    /* Category accent colors — clean & vibrant */
+    --apps-primary: 263 60% 58%;
+    --apps-bg: 263 60% 96%;
+    --bots-primary: 152 60% 40%;
+    --bots-bg: 152 60% 95%;
+    --biblio-primary: 38 80% 50%;
+    --biblio-bg: 38 80% 95%;
+    --search-primary: 210 80% 52%;
+    --search-bg: 210 80% 95%;
+    --utils-primary: 340 65% 55%;
+    --utils-bg: 340 65% 95%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 224 30% 7%;
+    --foreground: 220 15% 90%;
+
+    --card: 224 25% 11%;
+    --card-foreground: 220 15% 90%;
+
+    --popover: 224 25% 11%;
+    --popover-foreground: 220 15% 90%;
+
+    --primary: 220 70% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 224 20% 16%;
+    --secondary-foreground: 220 15% 90%;
+
+    --muted: 224 20% 16%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 224 20% 16%;
+    --accent-foreground: 220 15% 90%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 220 15% 90%;
+
+    --border: 224 20% 16%;
+    --input: 224 20% 16%;
+    --ring: 220 70% 55%;
+
+    --apps-bg: 263 40% 14%;
+    --bots-bg: 152 40% 12%;
+    --biblio-bg: 38 40% 12%;
+    --search-bg: 210 40% 13%;
+    --utils-bg: 340 40% 13%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Logo Intro Animation */
+@keyframes logoZoom {
+  0% { transform: scale(0.2); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: scale(6); opacity: 1; }
+}
+
+@keyframes logoFadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
