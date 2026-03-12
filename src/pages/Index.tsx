@@ -86,7 +86,7 @@ const Index = () => {
           {/* Bibliografia IA */}
           <section className="mb-10">
             <SectionHeader
-              title="Bibliografia IA"
+              title="Biblio IA"
               subtitle="Referências de livros, artigos e verbetes"
               accentVar="--biblio-primary"
             />

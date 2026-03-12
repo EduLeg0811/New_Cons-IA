@@ -11,6 +11,8 @@ import heroBiblio from "@/assets/hero-biblio.png";
 import heroBots from "@/assets/hero-bots.png";
 import heroApps from "@/assets/hero-apps.png";
 import heroLinks from "@/assets/hero-links.png";
+import bookPageFlip from "@/assets/Book_Page_Flip.mp4";
+import heroChatbot from "@/assets/hero_chatbot.mp4";
 
 const heroImages: Record<string, string> = {
   busca: heroBusca,
@@ -23,14 +25,21 @@ const heroImages: Record<string, string> = {
 /* ── rotating words for the hero ── */
 const rotatingWords = [
   "pesquisar",
-  "localizar",
+  "consultar",
+  "procurar",
+  "encontrar",
+  "localizar", 
   "aprender",
   "explorar",
   "descobrir",
   "escrever",
   "conversar",
   "discutir",
-  "desenvolver",
+  "refletir",
+  "aplicar",
+  "utilizar",
+  "organizar",
+  
 ];
 
 const RotatingWord = () => {
@@ -95,6 +104,8 @@ const CategoryCard = ({
 }) => {
   const Icon = cat.landingIcon;
   const img = heroImages[cat.key];
+  const isVideoCard = cat.key === "busca" || cat.key === "bots";
+  const videoSrc = cat.key === "busca" ? bookPageFlip : heroChatbot;
 
   return (
     <RevealSection>
@@ -109,13 +120,27 @@ const CategoryCard = ({
           className="relative w-full md:w-1/2 h-48 sm:h-56 md:h-auto md:min-h-[280px] overflow-hidden flex items-center justify-center"
           style={{ backgroundColor: `hsl(var(${cat.bgVar}))` }}
         >
-          <motion.img
-            src={img}
-            alt={cat.landingLabel}
-            className="w-full h-full object-cover"
-            whileHover={{ scale: 1.04 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          />
+          {isVideoCard ? (
+            <motion.video
+              src={videoSrc}
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              whileHover={{ scale: 1.04 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            />
+          ) : (
+            <motion.img
+              src={img}
+              alt={cat.landingLabel}
+              className="w-full h-full object-cover"
+              whileHover={{ scale: 1.04 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            />
+          )}
         </div>
 
         {/* Content section */}
@@ -233,7 +258,7 @@ const Landing = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto leading-relaxed mb-10"
         >
-          Explore ferramentas de inteligência artificial para pesquisa e estudo da Conscienciologia.
+          Explore ferramentas de IA para estudo e pesquisa da Conscienciologia.
         </motion.p>
 
         {/* Scroll indicator */}

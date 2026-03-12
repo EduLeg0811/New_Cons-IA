@@ -62,7 +62,7 @@ export const categories: CategoryData[] = [
   },
   {
     key: "biblio",
-    title: "Bibliografia IA",
+    title: "Biblio IA",
     subtitle: "Referências de livros, artigos e verbetes",
     accentVar: "--biblio-primary",
     bgVar: "--biblio-bg",
