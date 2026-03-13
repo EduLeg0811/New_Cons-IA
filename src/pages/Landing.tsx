@@ -5,6 +5,7 @@ import { categories } from "@/data/modules";
 import React, { useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 import heroBusca from "@/assets/hero-busca.png";
 import heroBiblio from "@/assets/hero-biblio.png";
@@ -26,20 +27,63 @@ const heroImages: Record<string, string> = {
 const rotatingWords = [
   "pesquisar",
   "consultar",
-  "procurar",
-  "encontrar",
-  "localizar", 
   "aprender",
-  "explorar",
-  "descobrir",
-  "escrever",
   "conversar",
+  "perguntar",
+  "aprofundar",
+  "expandir", 
+  "escrever",
+  "analisar",
+  "investigar",
+  "produzir",
+  "explorar",
   "discutir",
+  "relacionar",
+  "refinar",
+  "explicar",
+  "comparar",
+  "elaborar",
+  "descobrir",
+  "avaliar",
+  "procurar",
+  "examinar",
+  "encontrar",
+  "compreender",
+  "conceituar",
+  "localizar",
   "refletir",
-  "aplicar",
-  "utilizar",
+ "explicar",
   "organizar",
-  
+  "interpretar",
+  "revisar", 
+  "comunicar",
+  "classificar",
+  "mapear",
+  "formular",
+  "argumentar",
+  "sistematizar",
+  "desenvolver",
+  "exemplificar",
+  "categorizar",
+  "justificar",
+  "estruturar",
+  "modelar",
+  "demonstrar",
+  "registrar",
+  "divulgar",
+  "documentar",
+  "anotar",
+  "integrar",
+  "aperfeiçoar",
+  "comunicar",
+  "utilizar",
+  "conectar",
+  "validar",
+  "aplicar",
+  "articular",
+  "testar",
+  "verificar",
+  "confirmar"
 ];
 
 const RotatingWord = () => {
@@ -162,27 +206,67 @@ const CategoryCard = ({
           {/* Module pills */}
           <div className="flex flex-wrap gap-2 mb-6">
             {cat.items.map((item) =>
-              item.external ? (
-                <a
-                  key={item.title}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="rounded-full px-3 py-1 text-[11px] font-medium border border-border/60 text-muted-foreground bg-background/60 hover:border-foreground/30 hover:text-foreground transition-colors"
+              <Tooltip key={item.title} delayDuration={1000}>
+                <TooltipTrigger asChild>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="rounded-full border px-3 py-1 text-[11px] font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                      style={{
+                        borderColor: `hsl(var(${cat.accentVar}) / 0.4)`,
+                        backgroundColor: `hsl(var(${cat.accentVar}) / 0.1)`,
+                        color: `hsl(var(${cat.accentVar}))`,
+                        boxShadow: `0 0 0 0 hsl(var(${cat.accentVar}) / 0)`,
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = `hsl(var(${cat.accentVar}) / 0.75)`;
+                        e.currentTarget.style.backgroundColor = `hsl(var(${cat.accentVar}) / 0.18)`;
+                        e.currentTarget.style.boxShadow = `0 10px 24px -14px hsl(var(${cat.accentVar}) / 0.7)`;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = `hsl(var(${cat.accentVar}) / 0.4)`;
+                        e.currentTarget.style.backgroundColor = `hsl(var(${cat.accentVar}) / 0.1)`;
+                        e.currentTarget.style.boxShadow = `0 0 0 0 hsl(var(${cat.accentVar}) / 0)`;
+                      }}
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      onClick={(e) => e.stopPropagation()}
+                      className="rounded-full border px-3 py-1 text-[11px] font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                      style={{
+                        borderColor: `hsl(var(${cat.accentVar}) / 0.4)`,
+                        backgroundColor: `hsl(var(${cat.accentVar}) / 0.1)`,
+                        color: `hsl(var(${cat.accentVar}))`,
+                        boxShadow: `0 0 0 0 hsl(var(${cat.accentVar}) / 0)`,
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = `hsl(var(${cat.accentVar}) / 0.75)`;
+                        e.currentTarget.style.backgroundColor = `hsl(var(${cat.accentVar}) / 0.18)`;
+                        e.currentTarget.style.boxShadow = `0 10px 24px -14px hsl(var(${cat.accentVar}) / 0.7)`;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = `hsl(var(${cat.accentVar}) / 0.4)`;
+                        e.currentTarget.style.backgroundColor = `hsl(var(${cat.accentVar}) / 0.1)`;
+                        e.currentTarget.style.boxShadow = `0 0 0 0 hsl(var(${cat.accentVar}) / 0)`;
+                      }}
+                    >
+                      {item.title}
+                    </Link>
+                  )}
+                </TooltipTrigger>
+                <TooltipContent
+                  side="top"
+                  className="max-w-64 border-border/60 bg-card/95 text-xs leading-relaxed text-foreground backdrop-blur-sm"
                 >
-                  {item.title}
-                </a>
-              ) : (
-                <Link
-                  key={item.title}
-                  to={item.href}
-                  onClick={(e) => e.stopPropagation()}
-                  className="rounded-full px-3 py-1 text-[11px] font-medium border border-border/60 text-muted-foreground bg-background/60 hover:border-foreground/30 hover:text-foreground transition-colors"
-                >
-                  {item.title}
-                </Link>
-              ),
+                  {item.description}
+                </TooltipContent>
+              </Tooltip>,
             )}
           </div>
 
@@ -264,7 +348,7 @@ const Landing = () => {
           className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto leading-relaxed mb-10"
         >
           <span>Explore </span>
-          <span className="font-extrabold text-primary">{totalModules}</span>
+          <span className="font-extrabold text-primary">{totalModules-4}</span>
           <span> ferramentas de IA para estudo e pesquisa da Conscienciologia.</span>
         </motion.p>
 

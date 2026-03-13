@@ -37,7 +37,7 @@ export const categories: CategoryData[] = [
     items: [
       {
         title: "Livros & Tratados",
-        description: "Pesquise palavras e trechos em centenas de livros e tratados conscienciológicos.",
+        description: "Pesquise palavras e termos nas obras de Waldo Vieira.",
         icon: Search,
         href: "https://cons-ia.org/index_search_book.html",
         external: true,
@@ -45,7 +45,7 @@ export const categories: CategoryData[] = [
       },
       {
         title: "Definologia de Verbetes",
-        description: "Busque definições em milhares de verbetes da Enciclopédia da Conscienciologia.",
+        description: "Busque palavras e termos na Definologia dos verbetes.",
         icon: Book,
         href: "https://cons-ia.org/index_search_verb.html",
         external: true,
@@ -53,7 +53,7 @@ export const categories: CategoryData[] = [
       },
       {
         title: "Conscienciograma",
-        description: "Explore as questões do Conscienciograma para autoavaliação consciencial.",
+        description: "Explore as questões do Conscienciograma.",
         icon: Book,
         href: "https://cons-ia.org/index_search_ccg.html",
         external: true,
@@ -67,13 +67,13 @@ export const categories: CategoryData[] = [
     accentVar: "--biblio-primary",
     bgVar: "--biblio-bg",
     landingLabel: "Consultar Bilbiografia",
-    landingDescription: "Consultar referências bibliográficas completas de livros e verbetes conscienciológicos.",
+    landingDescription: "Consultar referências bibliográficas completas de livros e verbetes.",
     landingIcon: List,
     route: "/bibliografia",
     items: [
       {
         title: "Bibliografia de Livros",
-        description: "Consulte referências bibliográficas completas de livros conscienciológicos.",
+        description: "Referências bibliográficas completas das obras de Waldo Vieira.",
         icon: List,
         href: "https://cons-ia.org/index_biblio_wv.html",
         external: true,
@@ -96,13 +96,13 @@ export const categories: CategoryData[] = [
     accentVar: "--bots-primary",
     bgVar: "--bots-bg",
     landingLabel: "Conversar com Assistentes IA",
-    landingDescription: "Tirar dúvidas e explorar temas conscienciológicos com assistentes de inteligência artificial.",
+    landingDescription: "Tirar dúvidas e explorar temas conscienciológicos com assistentes de IA.",
     landingIcon: MessageSquare,
     route: "/bots",
     items: [
       {
         title: "ConsGPT",
-        description: "Assistente GPT especializado em Conscienciologia via ChatGPT.",
+        description: "Assistente ChatGPT especializado em Conscienciologia.",
         icon: MessageSquare,
         href: "https://chatgpt.com/g/g-68a5d68b96c4819189dd1e6fb0def83f-consgpt",
         external: true,
@@ -137,7 +137,7 @@ export const categories: CategoryData[] = [
     items: [
       {
         title: "Bibliomancia Digital",
-        description: "Receba pensatas aleatórias do Léxico de Ortopensatas.",
+        description: "Sorteie pensatas aleatórias do Léxico de Ortopensatas.",
         icon: BookOpen,
         href: "https://cons-ia.org/index_mancia.html",
         external: true,
@@ -171,28 +171,28 @@ export const categories: CategoryData[] = [
     items: [
       {
         title: "ICGE",
-        description: "Instituto de Cognopolítica e Governança da Evolução.",
+        description: "Instituto Cognopolitano de Geografia e Estatística.",
         icon: Globe,
         href: "https://www.icge.org.br/",
         external: true,
       },
       {
         title: "Enciclopédia",
-        description: "Enciclopédia Digital da Conscienciologia.",
+        description: "Enciclopédia da Conscienciologia.",
         icon: Globe,
         href: "https://enciclopediadaconscienciologia.org/",
         external: true,
       },
       {
         title: "Periódicos",
-        description: "Portal de periódicos científicos conscienciológicos.",
+        description: "Portal de periódicos da Conscienciologia.",
         icon: Globe,
         href: "https://periodicos.conscienciologia.org.br/",
         external: true,
       },
       {
         title: "Livros em PDF",
-        description: "Acervo de livros conscienciológicos em formato PDF.",
+        description: "Acervo de livros emPDF.",
         icon: Globe,
         href: "https://drive.google.com/drive/folders/1Mp6Zfhq-peIYlo9Js0wYRX2DnRjFYyUj?usp=sharing",
         external: true,
