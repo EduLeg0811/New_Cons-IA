@@ -295,7 +295,7 @@ const Landing = () => {
         {/* ── Todos os Módulos ── to="/todos"*/}
         <RevealSection>
           <Link
-            to="https://cons-ia.org/new.html"
+            to="https://cons-ia.org/external.html"
             className="group relative flex items-center gap-6 rounded-3xl border border-border/30 bg-card p-7 sm:p-9 transition-all duration-500 hover:shadow-2xl hover:shadow-black/[.06] dark:hover:shadow-black/30 hover:-translate-y-1 overflow-hidden"
           >
             {/* Background pattern */}

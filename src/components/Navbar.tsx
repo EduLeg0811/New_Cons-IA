@@ -31,15 +31,15 @@ const Navbar = () => {
     >
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-5 sm:px-8">
         {/* Logo */}
-        <Link to="/" className="group flex items-center gap-2.5">
+        <Link to="https://cons-ia.org/external.html" className="group flex items-center gap-2.5">
           <motion.div
-            whileHover={{ rotate: -8, scale: 1.1 }}
+            whileHover={{ rotate: -8, scale: 1.8 }}
             transition={{ type: "spring", stiffness: 400, damping: 15 }}
           >
             <img
               src="/icon.png"
               alt="Cons-IA"
-              className="h-7 w-7 object-contain"
+              className="h-8 w-8 object-contain"
             />
           </motion.div>
           <span className="text-[15px] font-bold tracking-tight text-foreground">
