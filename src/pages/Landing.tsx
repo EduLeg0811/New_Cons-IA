@@ -8,18 +8,16 @@ import Footer from "@/components/Footer";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 import heroBusca from "@/assets/hero-busca.png";
-import heroBiblio from "@/assets/hero-biblio.png";
+import heroBiblioVideo from "@/assets/hero-biblio.mp4";
 import heroBots from "@/assets/hero-bots.png";
-import heroApps from "@/assets/hero-apps.png";
+import heroAppsVideo from "@/assets/hero-apps.mp4";
 import heroLinks from "@/assets/hero-links.png";
 import bookPageFlip from "@/assets/Book_Page_Flip.mp4";
 import heroChatbot from "@/assets/hero_chatbot.mp4";
 
 const heroImages: Record<string, string> = {
   busca: heroBusca,
-  biblio: heroBiblio,
   bots: heroBots,
-  apps: heroApps,
   links: heroLinks,
 };
 
@@ -52,7 +50,7 @@ const rotatingWords = [
   "conceituar",
   "localizar",
   "refletir",
- "explicar",
+  "explicar",
   "organizar",
   "interpretar",
   "revisar", 
@@ -148,8 +146,14 @@ const CategoryCard = ({
 }) => {
   const Icon = cat.landingIcon;
   const img = heroImages[cat.key];
-  const isVideoCard = cat.key === "busca" || cat.key === "bots";
-  const videoSrc = cat.key === "busca" ? bookPageFlip : heroChatbot;
+  const videoByKey: Partial<Record<string, string>> = {
+    busca: bookPageFlip,
+    biblio: heroBiblioVideo,
+    bots: heroChatbot,
+    apps: heroAppsVideo,
+  };
+  const videoSrc = videoByKey[cat.key];
+  const isVideoCard = Boolean(videoSrc);
 
   return (
     <RevealSection>
