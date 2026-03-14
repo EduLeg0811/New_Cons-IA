@@ -25,11 +25,13 @@ const heroImages: Record<string, string> = {
 const rotatingWords = [
   "pesquisar",
   "consultar",
-  "aprender",
+  "desenvolver",
   "compreender",
   "conceituar",
   "localizar",
   "conversar",
+  "estudar",
+  "aprender",
   "perguntar",
   "aprofundar",
   "expandir", 
@@ -60,7 +62,6 @@ const rotatingWords = [
   "formular",
   "argumentar",
   "sistematizar",
-  "desenvolver",
   "exemplificar",
   "categorizar",
   "justificar",
@@ -347,6 +348,7 @@ const Landing = () => {
           className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.2] mb-6"
         >
           <span className="inline-flex flex-col items-stretch">
+            <span className="text-2xl sm:text-3xl md:text-4xl mb-5">Olá Conscienciólogo!</span>
             <span>O que você quer</span>
             <span className="relative left-[-1.5ch] inline-flex items-baseline justify-end whitespace-nowrap">
               <RotatingWord />
