@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, LayoutGrid, Sparkles } from "lucide-react";
 import { categories } from "@/data/modules";
 import React, { useRef } from "react";
@@ -49,9 +49,6 @@ const rotatingWords = [
   "procurar",
   "examinar",
   "encontrar",
-  "compreender",
-  "conceituar",
-  "localizar",
   "refletir",
   "explicar",
   "organizar",
@@ -102,7 +99,7 @@ const RotatingWord = () => {
       <span className="invisible w-full text-right">{rotatingWords.reduce((a, b) => (a.length >= b.length ? a : b))}</span>
       {rotatingWords.map((word, i) => (
         <motion.span
-          key={word}
+          key={`${word}-${i}`}
           className="absolute inset-0 bg-gradient-to-r from-primary via-[hsl(265_50%_55%)] to-[hsl(340_50%_52%)] bg-clip-text text-transparent"
           initial={false}
           animate={{
@@ -146,6 +143,7 @@ const CategoryCard = ({
   index: number;
   isReversed: boolean;
 }) => {
+  const navigate = useNavigate();
   const Icon = cat.landingIcon;
   const img = heroImages[cat.key];
   const videoByKey: Partial<Record<string, string>> = {
@@ -159,8 +157,16 @@ const CategoryCard = ({
 
   return (
     <RevealSection>
-      <Link
-        to={`/cat/${cat.key}`}
+      <div
+        role="link"
+        tabIndex={0}
+        onClick={() => navigate(`/cat/${cat.key}`)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            navigate(`/cat/${cat.key}`);
+          }
+        }}
         className={`group relative flex flex-col ${
           isReversed ? "md:flex-row-reverse" : "md:flex-row"
         } items-stretch gap-0 rounded-3xl border border-border/30 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-black/[.06] dark:hover:shadow-black/30 hover:-translate-y-1 bg-card`}
@@ -285,7 +291,7 @@ const CategoryCard = ({
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </div>
         </div>
-      </Link>
+      </div>
     </RevealSection>
   );
 };
@@ -344,7 +350,7 @@ const Landing = () => {
             <span>O que você quer</span>
             <span className="relative left-[-1.5ch] inline-flex items-baseline justify-end whitespace-nowrap">
               <RotatingWord />
-              <span className="relative top-[0.1em] ml-[0.25em]">?</span>
+              <span className="relative top-[0.1em] ml-[0.15em]">?</span>
             </span>
           </span>
         </motion.h1>
