@@ -49,14 +49,14 @@ const Index = () => {
               {[
                 {
                   title: "Livros & Tratados",
-                  description: "Pesquise palavras e trechos em centenas de livros e tratados conscienciológicos.",
+                  description: "Pesquise palavras e trechos em livros e tratados de autoria de Waldo Vieira.",
                   icon: <Search className="h-4.5 w-4.5" />,
                   href: "/search-book",
                   badge: "★",
                 },
                 {
                   title: "Definologia de Verbetes",
-                  description: "Busque definições em milhares de verbetes da Enciclopédia da Conscienciologia.",
+                  description: "Busque palavras na Definologia dos verbetes da Enciclopédia da Conscienciologia.",
                   icon: <Book className="h-4.5 w-4.5" />,
                   href: "/search-verb",
                   badge: "★",
@@ -94,7 +94,7 @@ const Index = () => {
               {[
                 {
                   title: "Bibliografia de Livros",
-                  description: "Consulte referências bibliográficas completas de livros conscienciológicos.",
+                  description: "Consulte referências bibliográficas completas dos livros e tratados de autoria de Waldo Vieira.",
                   icon: <List className="h-4.5 w-4.5" />,
                   href: "/biblio-wv",
                   badge: "★",
@@ -133,7 +133,7 @@ const Index = () => {
               {[
                 {
                   title: "ConsGPT",
-                  description: "Assistente GPT especializado em Conscienciologia via ChatGPT.",
+                  description: "Assistente ChatGPT especialista em Conscienciologia.",
                   icon: <MessageSquare className="h-4.5 w-4.5" />,
                   href: "https://chatgpt.com/g/g-68a5d68b96c4819189dd1e6fb0def83f-consgpt",
                   external: true,
@@ -147,7 +147,7 @@ const Index = () => {
                 },
                 {
                   title: "ConsBOT",
-                  description: "Chatbot RAG com busca em documentos conscienciológicos.",
+                  description: "Chatbot RAG desenvolvido pela Conscienciologia.",
                   icon: <GraduationCap className="h-4.5 w-4.5" />,
                   href: "/ragbot",
                   badge: "★",
@@ -172,14 +172,14 @@ const Index = () => {
           <section className="mb-10">
             <SectionHeader
               title="Apps IA"
-              subtitle="Aplicativos diversos com inteligência artificial"
+              subtitle="Aplicativos diversos com Inteligência Artificial"
               accentVar="--apps-primary"
             />
             <div className="flex gap-3 overflow-x-auto pb-2">
               {[
                 {
                   title: "Bibliomancia Digital",
-                  description: "Receba pensatas aleatórias do Léxico de Ortopensatas.",
+                  description: "Sorteie pensatas aleatórias do Léxico de Ortopensatas.",
                   icon: <BookOpen className="h-4.5 w-4.5" />,
                   href: "/mancia",
                 },
@@ -224,28 +224,28 @@ const Index = () => {
               {[
                 {
                   title: "ICGE",
-                  description: "Instituto de Cognopolítica e Governança da Evolução.",
+                  description: "Instituto de Cognopolitano de Geografia e Estatística.",
                   icon: <Globe className="h-4.5 w-4.5" />,
                   href: "https://www.icge.org.br/",
                   external: true,
                 },
                 {
                   title: "Enciclopédia",
-                  description: "Enciclopédia Digital da Conscienciologia.",
+                  description: "Enciclopédia da Conscienciologia Digital",
                   icon: <Globe className="h-4.5 w-4.5" />,
                   href: "https://enciclopediadaconscienciologia.org/",
                   external: true,
                 },
                 {
                   title: "Periódicos",
-                  description: "Portal de periódicos científicos conscienciológicos.",
+                  description: "Portal de periódicos científicos da Conscienciologia.",
                   icon: <Globe className="h-4.5 w-4.5" />,
                   href: "https://periodicos.conscienciologia.org.br/",
                   external: true,
                 },
                 {
                   title: "Livros em PDF",
-                  description: "Acervo de livros conscienciológicos em formato PDF.",
+                  description: "Acervo de livros de Conscienciologia em formato PDF.",
                   icon: <Globe className="h-4.5 w-4.5" />,
                   href: "https://drive.google.com/drive/folders/1Mp6Zfhq-peIYlo9Js0wYRX2DnRjFYyUj?usp=sharing",
                   external: true,

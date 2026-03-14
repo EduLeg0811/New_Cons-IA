@@ -71,7 +71,6 @@ const rotatingWords = [
   "modelar",
   "demonstrar",
   "registrar",
-  "divulgar",
   "documentar",
   "anotar",
   "integrar",
@@ -341,11 +340,11 @@ const Landing = () => {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
           className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.2] mb-6"
         >
-          <span className="inline-flex flex-col items-end">
+          <span className="inline-flex flex-col items-stretch">
             <span>O que você quer</span>
-            <span className="inline-flex items-baseline justify-end whitespace-nowrap">
+            <span className="relative left-[-1.5ch] inline-flex items-baseline justify-end whitespace-nowrap">
               <RotatingWord />
-              <span className="relative top-[0.08em] ml-[0.25em]">?</span>
+              <span className="relative top-[0.1em] ml-[0.25em]">?</span>
             </span>
           </span>
         </motion.h1>
@@ -411,7 +410,7 @@ const Landing = () => {
             <div className="relative flex-1 min-w-0">
               <h2 className="text-lg sm:text-xl font-bold text-foreground mb-1">Todos os Módulos</h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Veja todos os {totalModules} aplicativos, bots, buscas e referências em uma única página.
+                Veja todos os aplicativos, bots, buscas e referências em uma única página.
               </p>
             </div>
 

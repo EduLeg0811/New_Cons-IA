@@ -116,7 +116,7 @@ export const categories: CategoryData[] = [
       },
       {
         title: "ConsBOT",
-        description: "Chatbot RAG com busca em documentos conscienciológicos.",
+        description: "Chatbot RAG desenvolvido pela Conscienciologa.",
         icon: GraduationCap,
         href: "https://cons-ia.org/index_ragbot.html",
         external: true,
@@ -131,7 +131,7 @@ export const categories: CategoryData[] = [
     accentVar: "--apps-primary",
     bgVar: "--apps-bg",
     landingLabel: "Usar Aplicativos IA",
-    landingDescription: "Bibliomancia digital, Quiz de perguntas e respostas e Flashcards para estudo conscienciológico.",
+    landingDescription: "Bibliomancia digital, Quiz de perguntas & respostas e Flashcards para estudo conscienciológico.",
     landingIcon: Sparkles,
     route: "/apps",
     items: [
