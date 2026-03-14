@@ -26,6 +26,9 @@ const rotatingWords = [
   "pesquisar",
   "consultar",
   "aprender",
+  "compreender",
+  "conceituar",
+  "localizar",
   "conversar",
   "perguntar",
   "aprofundar",
@@ -95,7 +98,7 @@ const RotatingWord = () => {
   }, []);
 
   return (
-    <span className="inline-flex relative left-1 top-[0.1em] w-[13ch] justify-end text-right h-[1.15em] overflow-hidden align-bottom">
+    <span className="inline-flex relative left-1 top-[0.1em] w-[13ch] justify-end text-right h-[1.28em] overflow-hidden align-bottom">
       {/* invisible word to reserve width */}
       <span className="invisible w-full text-right">{rotatingWords.reduce((a, b) => (a.length >= b.length ? a : b))}</span>
       {rotatingWords.map((word, i) => (
@@ -338,10 +341,12 @@ const Landing = () => {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
           className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.2] mb-6"
         >
-          O que você quer
-          <br />
-          <span className="relative -left-40 inline-flex items-baseline">
-            <RotatingWord /> <span className="relative left-4 top-2">?</span>
+          <span className="inline-flex flex-col items-end">
+            <span>O que você quer</span>
+            <span className="inline-flex items-baseline justify-end whitespace-nowrap">
+              <RotatingWord />
+              <span className="relative top-[0.08em] ml-[0.25em]">?</span>
+            </span>
           </span>
         </motion.h1>
 

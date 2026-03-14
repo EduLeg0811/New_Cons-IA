@@ -31,7 +31,7 @@ export const categories: CategoryData[] = [
     accentVar: "--search-primary",
     bgVar: "--search-bg",
     landingLabel: "Buscar em Livros e Verbetes",
-    landingDescription: "Buscar palavras ou termos específicos nos livros, tratados e verbetes da Conscienciologia.",
+    landingDescription: "Busque palavras ou termos específicos nos livros, tratados e verbetes da Conscienciologia.",
     landingIcon: Search,
     route: "/busca",
     items: [
@@ -67,7 +67,7 @@ export const categories: CategoryData[] = [
     accentVar: "--biblio-primary",
     bgVar: "--biblio-bg",
     landingLabel: "Consultar Bilbiografia",
-    landingDescription: "Consultar referências bibliográficas completas de livros e verbetes.",
+    landingDescription: "Consulte referências bibliográficas completas de livros e verbetes.",
     landingIcon: List,
     route: "/bibliografia",
     items: [
@@ -96,7 +96,7 @@ export const categories: CategoryData[] = [
     accentVar: "--bots-primary",
     bgVar: "--bots-bg",
     landingLabel: "Conversar com Assistentes IA",
-    landingDescription: "Tirar dúvidas e explorar temas conscienciológicos com assistentes de IA.",
+    landingDescription: "Converse e explore temas conscienciológicos com assistentes de IA.",
     landingIcon: MessageSquare,
     route: "/bots",
     items: [
@@ -131,7 +131,7 @@ export const categories: CategoryData[] = [
     accentVar: "--apps-primary",
     bgVar: "--apps-bg",
     landingLabel: "Usar Aplicativos IA",
-    landingDescription: "Bibliomancia digital, quizzes e flashcards para estudo conscienciológico.",
+    landingDescription: "Bibliomancia digital, Quiz de perguntas e respostas e Flashcards para estudo conscienciológico.",
     landingIcon: Sparkles,
     route: "/apps",
     items: [
@@ -144,7 +144,7 @@ export const categories: CategoryData[] = [
       },
       {
         title: "Quiz Conscienciológico",
-        description: "Teste seus conhecimentos em temas conscienciológicos.",
+        description: "Teste seus conhecimentos com testes conscienciológicos.",
         icon: Sparkles,
         href: "https://notebooklm.google.com/notebook/c3528e65-0c2b-4a80-b3f2-2f22e3626b67?artifactId=8f6fc286-021f-4184-b572-7f17c8561539",
         external: true,
