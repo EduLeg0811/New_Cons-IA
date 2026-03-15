@@ -7,81 +7,64 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
-import heroBusca from "@/assets/hero-busca.png";
 import heroBiblioVideo from "@/assets/hero-biblio.mp4";
-import heroBots from "@/assets/hero-bots.png";
 import heroAppsVideo from "@/assets/hero-apps.mp4";
-import heroLinks from "@/assets/hero-links.png";
+import heroLinksVideo from "@/assets/hero-links.mp4";
 import bookPageFlip from "@/assets/Book_Page_Flip.mp4";
 import heroChatbot from "@/assets/hero_chatbot.mp4";
-
-const heroImages: Record<string, string> = {
-  busca: heroBusca,
-  bots: heroBots,
-  links: heroLinks,
-};
 
 /* ── rotating words for the hero ── */
 const rotatingWords = [
   "pesquisar",
   "consultar",
-  "desenvolver",
-  "compreender",
-  "conceituar",
-  "localizar",
+  "entender",
   "conversar",
   "estudar",
   "aprender",
   "perguntar",
   "aprofundar",
+  "explorar",
   "expandir", 
   "escrever",
-  "analisar",
+  "revisar", 
   "investigar",
-  "produzir",
-  "explorar",
+ "classificar",
+   "categorizar",
+   "estruturar",
+   "articular",
   "discutir",
-  "relacionar",
-  "refinar",
-  "explicar",
-  "comparar",
   "elaborar",
   "descobrir",
-  "avaliar",
   "procurar",
   "examinar",
   "encontrar",
   "refletir",
-  "explicar",
   "organizar",
+  "desenvolver",
+  "comparar",
+  "conceituar",
+  "localizar", 
+  "compreender",
+  "analisar", 
+  "produzir",
+  "relacionar",
+  "refinar",  
+  "avaliar",
   "interpretar",
-  "revisar", 
-  "comunicar",
-  "classificar",
-  "mapear",
   "formular",
   "argumentar",
   "sistematizar",
   "exemplificar",
-  "categorizar",
   "justificar",
-  "estruturar",
   "modelar",
   "demonstrar",
-  "registrar",
-  "documentar",
-  "anotar",
-  "integrar",
   "aperfeiçoar",
-  "comunicar",
-  "utilizar",
   "conectar",
   "validar",
   "aplicar",
-  "articular",
+  "confirmar",
   "testar",
   "verificar",
-  "confirmar"
 ];
 
 const RotatingWord = () => {
@@ -146,15 +129,24 @@ const CategoryCard = ({
 }) => {
   const navigate = useNavigate();
   const Icon = cat.landingIcon;
-  const img = heroImages[cat.key];
-  const videoByKey: Partial<Record<string, string>> = {
+  const videoByKey: Record<string, string> = {
     busca: bookPageFlip,
     biblio: heroBiblioVideo,
     bots: heroChatbot,
     apps: heroAppsVideo,
+    links: heroLinksVideo,
+  };
+  const videoClassByKey: Partial<Record<string, string>> = {
+    apps: "scale-[1.2]",
+    links: "scale-[1.22]",
+  };
+  const hoverScaleByKey: Partial<Record<string, number>> = {
+    apps: 1.24,
+    links: 1.26,
   };
   const videoSrc = videoByKey[cat.key];
-  const isVideoCard = Boolean(videoSrc);
+  const videoScaleClass = videoClassByKey[cat.key] ?? "scale-[1.08]";
+  const hoverScale = hoverScaleByKey[cat.key] ?? 1.12;
 
   return (
     <RevealSection>
@@ -177,27 +169,17 @@ const CategoryCard = ({
           className="relative w-full md:w-1/2 h-48 sm:h-56 md:h-auto md:min-h-[280px] overflow-hidden flex items-center justify-center"
           style={{ backgroundColor: `hsl(var(${cat.bgVar}))` }}
         >
-          {isVideoCard ? (
-            <motion.video
-              src={videoSrc}
-              className="w-full h-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              whileHover={{ scale: 1.04 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            />
-          ) : (
-            <motion.img
-              src={img}
-              alt={cat.landingLabel}
-              className="w-full h-full object-cover"
-              whileHover={{ scale: 1.04 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            />
-          )}
+          <motion.video
+            src={videoSrc}
+            className={`absolute inset-0 h-full w-full object-cover object-center ${videoScaleClass}`}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            whileHover={{ scale: hoverScale }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          />
         </div>
 
         {/* Content section */}
