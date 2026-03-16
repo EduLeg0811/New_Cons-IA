@@ -37,23 +37,21 @@ export const categories: CategoryData[] = [
     items: [
       {
         title: "Livros & Tratados",
-        description: "Pesquise palavras e termos nas obras de Waldo Vieira.",
+        description: "Encontre palavras e termos exatos (busca léxica) nos livros e tratados de Waldo Vieira.",
         icon: Search,
         href: "https://cons-ia.org/index_search_book.html",
-        external: true,
-        //badge: "★",
+        external: true
       },
       {
         title: "Definologia de Verbetes",
-        description: "Busque palavras e termos na Definologia dos verbetes.",
+        description: "Pesquise palavras e termos dentro da Definologia dos verbetes (não apenas nos títulos).",
         icon: Book,
         href: "https://cons-ia.org/index_search_verb.html",
-        external: true,
-        //badge: "★",
+        external: true
       },
       {
         title: "Conscienciograma",
-        description: "Explore as questões do Conscienciograma.",
+        description: "Busque palavras e termos nas questões do Conscienciograma.",
         icon: Book,
         href: "https://cons-ia.org/index_search_ccg.html",
         external: true,
@@ -95,7 +93,7 @@ export const categories: CategoryData[] = [
     subtitle: "Assistentes inteligentes de conversação",
     accentVar: "--bots-primary",
     bgVar: "--bots-bg",
-    landingLabel: "Conversar com Assistentes IA",
+    landingLabel: "Conversar com a IA",
     landingDescription: "Converse e explore temas conscienciológicos com assistentes de IA.",
     landingIcon: MessageSquare,
     route: "/bots",
@@ -192,7 +190,7 @@ export const categories: CategoryData[] = [
       },
       {
         title: "Livros em PDF",
-        description: "Acervo de livros emPDF.",
+        description: "Acervo de livros em PDF.",
         icon: Globe,
         href: "https://drive.google.com/drive/folders/1Mp6Zfhq-peIYlo9Js0wYRX2DnRjFYyUj?usp=sharing",
         external: true,

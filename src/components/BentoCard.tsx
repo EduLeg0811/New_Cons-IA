@@ -29,7 +29,7 @@ const BentoCard = ({
     <motion.div
       whileHover={{ y: -3 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
-      className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border/60 p-5 transition-shadow hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/20 ${className}`}
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 p-5 transition-shadow hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/20 ${className}`}
       style={{ backgroundColor: `hsl(var(${bgVar}))` }}
     >
       {/* Top row */}
@@ -63,7 +63,7 @@ const BentoCard = ({
         >
           {title}
         </h3>
-        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+        <p className="mt-2 text-xs leading-relaxed text-muted-foreground whitespace-pre-line">
           {description}
         </p>
       </div>
