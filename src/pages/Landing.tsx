@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, LayoutGrid, Sparkles } from "lucide-react";
+import { ArrowRight, LayoutGrid } from "lucide-react";
 import { categories } from "@/data/modules";
 import React, { useRef } from "react";
 import Navbar from "@/components/Navbar";
@@ -13,7 +13,6 @@ import heroLinksVideo from "@/assets/hero-links.mp4";
 import bookPageFlip from "@/assets/Book_Page_Flip.mp4";
 import heroChatbot from "@/assets/hero_chatbot.mp4";
 
-/* ── rotating words for the hero ── */
 const rotatingWords = [
   "pesquisar",
   "consultar",
@@ -24,9 +23,9 @@ const rotatingWords = [
   "perguntar",
   "aprofundar",
   "explorar",
-  "expandir", 
+  "expandir",
   "escrever",
-  "revisar", 
+  "revisar",
   "investigar",
   "classificar",
   "estruturar",
@@ -43,12 +42,12 @@ const rotatingWords = [
   "desenvolver",
   "comparar",
   "conceituar",
-  "localizar", 
+  "localizar",
   "compreender",
-  "analisar", 
+  "analisar",
   "produzir",
   "relacionar",
-  "refinar",  
+  "refinar",
   "avaliar",
   "interpretar",
   "formular",
@@ -79,7 +78,6 @@ const RotatingWord = () => {
 
   return (
     <span className="inline-flex relative left-1 top-[0.1em] w-[13ch] justify-end text-right h-[1.28em] overflow-hidden align-bottom">
-      {/* invisible word to reserve width */}
       <span className="invisible w-full text-right">{rotatingWords.reduce((a, b) => (a.length >= b.length ? a : b))}</span>
       {rotatingWords.map((word, i) => (
         <motion.span
@@ -99,7 +97,6 @@ const RotatingWord = () => {
   );
 };
 
-/* ── animated reveal section ── */
 const RevealSection = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -117,7 +114,6 @@ const RevealSection = ({ children, className = "" }: { children: React.ReactNode
   );
 };
 
-/* ── category card component ── */
 const CategoryCard = ({
   cat,
   index,
@@ -164,7 +160,6 @@ const CategoryCard = ({
           isReversed ? "md:flex-row-reverse" : "md:flex-row"
         } items-stretch gap-0 rounded-3xl border border-border/30 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-black/[.06] dark:hover:shadow-black/30 hover:-translate-y-1 bg-card`}
       >
-        {/* Image section */}
         <div
           className="relative w-full md:w-1/2 h-48 sm:h-56 md:h-auto md:min-h-[280px] overflow-hidden flex items-center justify-center"
           style={{ backgroundColor: `hsl(var(${cat.bgVar}))` }}
@@ -182,7 +177,6 @@ const CategoryCard = ({
           />
         </div>
 
-        {/* Content section */}
         <div className="flex flex-col justify-center w-full md:w-1/2 p-5 sm:p-7 md:p-8 px-[32px] py-[32px]">
           <div className="mb-3">
             <span
@@ -195,12 +189,10 @@ const CategoryCard = ({
           </div>
 
           <h2 className="text-xl sm:text-2xl font-bold text-foreground leading-snug mb-3">{cat.landingLabel}</h2>
-
           <p className="text-sm text-muted-foreground leading-relaxed mb-6">{cat.landingDescription}</p>
 
-          {/* Module pills */}
           <div className="flex flex-wrap gap-2 mb-6">
-            {cat.items.map((item) =>
+            {cat.items.map((item) => (
               <Tooltip key={item.title} delayDuration={1000}>
                 <TooltipTrigger asChild>
                   {item.external ? (
@@ -261,11 +253,10 @@ const CategoryCard = ({
                 >
                   {item.description}
                 </TooltipContent>
-              </Tooltip>,
-            )}
+              </Tooltip>
+            ))}
           </div>
 
-          {/* CTA */}
           <div
             className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
             style={{ color: `hsl(var(${cat.accentVar}))` }}
@@ -279,7 +270,6 @@ const CategoryCard = ({
   );
 };
 
-/* ── main landing ── */
 const Landing = () => {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -295,13 +285,11 @@ const Landing = () => {
     <div className="min-h-screen flex flex-col bg-background overflow-x-hidden">
       <Navbar />
 
-      {/* ═══════ HERO ═══════ */}
       <motion.section
         ref={heroRef}
         style={{ opacity: heroOpacity, scale: heroScale }}
         className="relative mx-auto w-full max-w-5xl px-5 pt-5 pb-10 sm:pt-8 sm:pb-14 text-center"
       >
-        {/* Decorative grid */}
         <div
           className="absolute inset-0 -z-10 opacity-[0.03] dark:opacity-[0.06]"
           style={{
@@ -309,19 +297,6 @@ const Landing = () => {
             backgroundSize: "32px 32px",
           }}
         />
-
-       {/*  <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/80 backdrop-blur-sm px-4 py-1.5 text-xs font-medium text-muted-foreground mb-8"
-        >
-          <Sparkles className="h-3.5 w-3.5 text-primary" />
-          <span className="font-extrabold text-primary" style={{ fontWeight: 800, color: "hsl(var(--primary))" }}>
-            {totalModules}
-          </span>
-          <span>ferramentas de IA disponíveis</span>
-        </motion.div> */}
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
@@ -346,11 +321,10 @@ const Landing = () => {
           className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto leading-relaxed mb-10"
         >
           <span>Explore </span>
-          <span className="font-extrabold text-primary">{totalModules-4}</span>
+          <span className="font-extrabold text-primary">{totalModules - 4}</span>
           <span> ferramentas de IA para estudo e pesquisa da Conscienciologia.</span>
         </motion.p>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -368,19 +342,16 @@ const Landing = () => {
         </motion.div>
       </motion.section>
 
-      {/* ═══════ CATEGORY SECTIONS ═══════ */}
       <main className="mx-auto w-full max-w-5xl px-5 sm:px-8 pb-20 flex flex-col gap-8">
         {categories.map((cat, i) => (
           <CategoryCard key={cat.key} cat={cat} index={i} isReversed={i % 2 === 1} />
         ))}
 
-        {/* ── Todos os Módulos ── to="/todos"*/}
         <RevealSection>
           <Link
             to="https://cons-ia.org/external.html"
             className="group relative flex items-center gap-6 rounded-3xl border border-border/30 bg-card p-7 sm:p-9 transition-all duration-500 hover:shadow-2xl hover:shadow-black/[.06] dark:hover:shadow-black/30 hover:-translate-y-1 overflow-hidden"
           >
-            {/* Background pattern */}
             <div
               className="absolute inset-0 opacity-[0.02] dark:opacity-[0.04]"
               style={{

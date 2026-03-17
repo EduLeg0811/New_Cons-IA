@@ -40,14 +40,14 @@ export const categories: CategoryData[] = [
         description: "Encontre palavras e termos exatos (busca léxica) nos livros e tratados de Waldo Vieira.",
         icon: Search,
         href: "https://cons-ia.org/index_search_book.html",
-        external: true
+        external: true,
       },
       {
         title: "Definologia de Verbetes",
         description: "Pesquise palavras e termos dentro da Definologia dos verbetes (não apenas nos títulos).",
         icon: Book,
         href: "https://cons-ia.org/index_search_verb.html",
-        external: true
+        external: true,
       },
       {
         title: "Conscienciograma",
@@ -64,7 +64,7 @@ export const categories: CategoryData[] = [
     subtitle: "Referências de livros, artigos e verbetes",
     accentVar: "--biblio-primary",
     bgVar: "--biblio-bg",
-    landingLabel: "Consultar Bilbiografia",
+    landingLabel: "Consultar Bibliografia",
     landingDescription: "Consulte referências bibliográficas completas de livros e verbetes.",
     landingIcon: List,
     route: "/bibliografia",
@@ -75,7 +75,6 @@ export const categories: CategoryData[] = [
         icon: List,
         href: "https://cons-ia.org/index_biblio_wv.html",
         external: true,
-        //badge: "★",
       },
       {
         title: "Bibliografia de Verbetes",
@@ -83,7 +82,6 @@ export const categories: CategoryData[] = [
         icon: Book,
         href: "https://cons-ia.org/index_biblio_verbete.html",
         external: true,
-        //badge: "★",
       },
     ],
   },
@@ -114,11 +112,10 @@ export const categories: CategoryData[] = [
       },
       {
         title: "ConsBOT",
-        description: "Chatbot RAG desenvolvido pela Conscienciologa.",
+        description: "Chatbot RAG desenvolvido pela Conscienciologia.",
         icon: GraduationCap,
         href: "https://cons-ia.org/index_ragbot.html",
         external: true,
-        //badge: "★",
       },
     ],
   },
@@ -129,7 +126,7 @@ export const categories: CategoryData[] = [
     accentVar: "--apps-primary",
     bgVar: "--apps-bg",
     landingLabel: "Usar Aplicativos IA",
-    landingDescription: "Bibliomancia digital, Quiz de perguntas & respostas e Flashcards para estudo conscienciológico.",
+    landingDescription: "Bibliomancia digital, quiz de perguntas e respostas e flashcards para estudo conscienciológico.",
     landingIcon: Sparkles,
     route: "/apps",
     items: [

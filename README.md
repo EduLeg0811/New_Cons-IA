@@ -1,73 +1,103 @@
-# Welcome to your Lovable project
+# Cons-IA Landing
 
-## Project info
+Landing page em React para organizar ferramentas de IA voltadas ao estudo e pesquisa da Conscienciologia.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Visão geral
 
-## How can I edit this code?
+O projeto entrega uma experiência de navegação simples com:
 
-There are several ways of editing your application.
+- página inicial com cards por categoria
+- página com todos os módulos em `/todos`
+- páginas por categoria em `/cat/:categoryKey`
+- páginas placeholder para módulos futuros
+- tema claro/escuro
+- animações e vídeos na landing
 
-**Use Lovable**
+As categorias e links são centralizados em [src/data/modules.ts](/d:/APPS/SIMPLE/New_Landpage_v2/src/data/modules.ts).
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- React 18
+- TypeScript
+- Vite
+- React Router
+- Tailwind CSS
+- Framer Motion
+- TanStack Query
+- Radix UI apenas para `toast` e `tooltip`
 
-**Use your preferred IDE**
+## Estrutura principal
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- [src/App.tsx](/d:/APPS/SIMPLE/New_Landpage_v2/src/App.tsx): define providers e rotas
+- [src/pages/Landing.tsx](/d:/APPS/SIMPLE/New_Landpage_v2/src/pages/Landing.tsx): homepage principal
+- [src/pages/Index.tsx](/d:/APPS/SIMPLE/New_Landpage_v2/src/pages/Index.tsx): visão agregada de todos os módulos
+- [src/pages/CategoryPage.tsx](/d:/APPS/SIMPLE/New_Landpage_v2/src/pages/CategoryPage.tsx): lista módulos por categoria
+- [src/pages/ComingSoon.tsx](/d:/APPS/SIMPLE/New_Landpage_v2/src/pages/ComingSoon.tsx): placeholder para rotas ainda não implementadas
+- [src/components](/d:/APPS/SIMPLE/New_Landpage_v2/src/components): componentes visuais reutilizados
+- [src/index.css](/d:/APPS/SIMPLE/New_Landpage_v2/src/index.css): tokens de tema e estilos globais
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Rotas
 
-Follow these steps:
+- `/`: landing principal
+- `/todos`: lista geral de módulos
+- `/cat/:categoryKey`: páginas por categoria
+- `/mancia`
+- `/biblio-wv`
+- `/biblio-verbete`
+- `/ragbot`
+- `/search-book`
+- `/search-verb`
+- `/search-ccg`
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+As últimas rotas hoje usam a tela de placeholder.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Desenvolvimento
 
-# Step 3: Install the necessary dependencies.
-npm i
+Pré-requisitos:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+- Node.js 18+
+- npm
+
+Comandos:
+
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Build de produção:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run build
+```
 
-**Use GitHub Codespaces**
+Preview local do build:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run preview
+```
 
-## What technologies are used for this project?
+Lint:
 
-This project is built with:
+```bash
+npm run lint
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Testes:
 
-## How can I deploy this project?
+```bash
+npm run test
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Observação: o projeto mantém configuração de Vitest, mas atualmente não possui testes automatizados em `src`.
 
-## Can I connect a custom domain to my Lovable project?
+## Conteúdo e manutenção
 
-Yes, you can!
+- Os links externos e metadados dos módulos ficam em [src/data/modules.ts](/d:/APPS/SIMPLE/New_Landpage_v2/src/data/modules.ts).
+- A identidade visual e as variáveis de cor ficam em [src/index.css](/d:/APPS/SIMPLE/New_Landpage_v2/src/index.css).
+- Os vídeos da landing ficam em [src/assets](/d:/APPS/SIMPLE/New_Landpage_v2/src/assets).
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Pendências conhecidas
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Há textos com encoding incorreto em alguns arquivos e labels visíveis.
+- As rotas de placeholder ainda não possuem integração real com backend.

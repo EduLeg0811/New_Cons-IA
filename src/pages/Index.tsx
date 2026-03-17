@@ -23,7 +23,6 @@ const Index = () => {
         <Navbar />
 
         <main className="flex-1 mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-          {/* Hero */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,7 +37,6 @@ const Index = () => {
             </p>
           </motion.div>
 
-          {/* Busca IA */}
           <section className="mb-10">
             <SectionHeader
               title="Busca IA"
@@ -83,7 +81,6 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Bibliografia IA */}
           <section className="mb-10">
             <SectionHeader
               title="Biblio IA"
@@ -122,7 +119,6 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Bots IA */}
           <section className="mb-10">
             <SectionHeader
               title="Bots IA"
@@ -168,7 +164,6 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Apps IA */}
           <section className="mb-10">
             <SectionHeader
               title="Apps IA"
@@ -213,7 +208,6 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Links Externos */}
           <section className="mb-10">
             <SectionHeader
               title="Links Externos"
@@ -224,7 +218,7 @@ const Index = () => {
               {[
                 {
                   title: "ICGE",
-                  description: "Instituto de Cognopolitano de Geografia e Estatística.",
+                  description: "Instituto Cognopolitano de Geografia e Estatística.",
                   icon: <Globe className="h-4.5 w-4.5" />,
                   href: "https://www.icge.org.br/",
                   external: true,

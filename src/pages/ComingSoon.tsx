@@ -3,18 +3,18 @@ import { Link, useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 
 const PAGE_NAMES: Record<string, string> = {
-  '/mancia': 'Bibliomancia Digital',
-  '/biblio-wv': 'Bibliografia de Livros',
-  '/biblio-verbete': 'Bibliografia de Verbetes',
-  '/ragbot': 'ConsBOT',
-  '/search-book': 'Busca em Livros & Tratados',
-  '/search-verb': 'Definologia de Verbetes',
-  '/search-ccg': 'Questões do Conscienciograma',
+  "/mancia": "Bibliomancia Digital",
+  "/biblio-wv": "Bibliografia de Livros",
+  "/biblio-verbete": "Bibliografia de Verbetes",
+  "/ragbot": "ConsBOT",
+  "/search-book": "Busca em Livros & Tratados",
+  "/search-verb": "Definologia de Verbetes",
+  "/search-ccg": "Questões do Conscienciograma",
 };
 
 const ComingSoon = () => {
   const { pathname } = useLocation();
-  const name = PAGE_NAMES[pathname] || 'Página';
+  const name = PAGE_NAMES[pathname] || "Página";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">

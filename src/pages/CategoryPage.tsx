@@ -38,7 +38,6 @@ const CategoryPage = () => {
       <Navbar />
 
       <main className="flex-1 mx-auto w-full max-w-5xl px-4 py-10 sm:px-6">
-        {/* Back link */}
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
@@ -54,7 +53,6 @@ const CategoryPage = () => {
           </Link>
         </motion.div>
 
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -68,7 +66,6 @@ const CategoryPage = () => {
           />
         </motion.div>
 
-        {/* Module cards */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {category.items.map((item, i) => {
             const Icon = item.icon;
