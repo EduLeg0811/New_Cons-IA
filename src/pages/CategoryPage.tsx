@@ -13,7 +13,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.08, duration: 0.4, ease: "easeOut" as const },
+    transition: { delay: 1 + i * 0.1, duration: 0.5, ease: "easeOut" as const },
   }),
 };
 
@@ -41,7 +41,7 @@ const CategoryPage = () => {
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.5 }}
           className="mb-8"
         >
           <Link
@@ -56,7 +56,7 @@ const CategoryPage = () => {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.5 }}
           className="mb-10"
         >
           <SectionHeader

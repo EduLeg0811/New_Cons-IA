@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, LayoutGrid } from "lucide-react";
 import { categories } from "@/data/modules";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -143,6 +143,27 @@ const CategoryCard = ({
   const videoSrc = videoByKey[cat.key];
   const videoScaleClass = videoClassByKey[cat.key] ?? "scale-[1.08]";
   const hoverScale = hoverScaleByKey[cat.key] ?? 1.12;
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const startDelayMs = (8 + index * 5) * 1000;
+
+    const playVideo = () => {
+      const video = videoRef.current;
+      if (!video) return;
+
+      video.currentTime = 0;
+      void video.play().catch(() => {});
+    };
+
+    const startTimer = window.setTimeout(() => {
+      playVideo();
+    }, startDelayMs);
+
+    return () => {
+      window.clearTimeout(startTimer);
+    };
+  }, [index]);
 
   return (
     <RevealSection>
@@ -165,13 +186,13 @@ const CategoryCard = ({
           style={{ backgroundColor: `hsl(var(${cat.bgVar}))` }}
         >
           <motion.video
+            ref={videoRef}
             src={videoSrc}
             className={`absolute inset-0 h-full w-full object-cover object-center ${videoScaleClass}`}
-            autoPlay
-            loop
             muted
+            loop
             playsInline
-            preload="metadata"
+            preload="auto"
             whileHover={{ scale: hoverScale }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
